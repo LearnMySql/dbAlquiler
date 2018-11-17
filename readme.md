@@ -8,4 +8,4 @@ Se requiere un sistema de información que permita gestionar la información de 
 - Diccionario de base de datos
 - Crear base de datos en gestor de base de datos MySQL
 - Script SQL de estructura de base de datos
-- 
+- Script de registro de base de datos
