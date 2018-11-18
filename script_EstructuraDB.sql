@@ -13,6 +13,9 @@ use dbAlquiler;
 /* Verificamos que la base de datos esté en uso */
 select database();
 
+/* Mostrar listado de las tablas de la base de datos seleccionada */
+show tables;
+
 /* Crear tabla Persona */
 create table PERSONA
 (
@@ -175,4 +178,36 @@ alter table ALQUILER
     add CONSTRAINT PERSONA_INQ_FK FOREIGN KEY (PERSONA_INQ)
     REFERENCES PERSONA(CODPER);
 
+/* Ver estructura de la tabla VIVIENDA */
+show columns in VIVIENDA;
 
+/* Agregar un campo con el costo mensual de la vivienda */
+alter table VIVIENDA
+    add COSTMENSVIV decimal(8,2);
+
+/* Verificamos que se haya agregado la columna */
+show columns in VIVIENDA;
+
+/* Listar registros de la tabla VIVIENDA */
+select * from VIVIENDA;
+
+/* Ver estructura de la tabla DETALLE_ALQUILER */
+show columns in DETALLE_ALQUILER;
+
+/* Eliminar campos fecha de inicio y costo en la tabla detalle alquiler */
+alter table DETALLE_ALQUILER
+    drop column FECINDETALQ, 
+    drop column COSTDETALQ;
+
+/* Verificamos la estructura de la tabla DETALLE_ALQUILER */
+show columns in DETALLE_ALQUILER;
+
+/* Agregar la columna CANTMESDETALQ */
+alter table DETALLE_ALQUILER
+    add column CANTMESDETALQ int;
+
+/* Verificamos la estructura de la tabla */
+show columns in DETALLE_ALQUILER;
+
+/* Listar registros de la tabla DETALLE_ALQUILER */
+select * from DETALLE_ALQUILER;

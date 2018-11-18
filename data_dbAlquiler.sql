@@ -128,3 +128,44 @@ values
 
 /* Revisar losregistros ingresados en la tabla DETALLE_ALQUILER */
 select * from DETALLE_ALQUILER;
+
+/* Ingresar los costos a las viviendas */
+update VIVIENDA
+    set
+        COSTMENSVIV = 850.00
+    where
+        CODVIV = 1;
+
+/* Ingresar los costos a las viviendas */
+update VIVIENDA
+    set
+        COSTMENSVIV = 700.00
+    where
+        CODVIV = 2;
+
+/* Ingresar los costos a las viviendas */
+update VIVIENDA
+    set
+        COSTMENSVIV = 1300.00
+    where
+        CODVIV = 3;
+
+/* Ingresar los costos a las viviendas */
+update VIVIENDA
+    set
+        COSTMENSVIV = 1100.00
+    where
+        CODVIV = 4;
+
+/* Verificamos el ingreso del dato */
+select * from VIVIENDA;
+
+/* Agregar cantidad de meses de alquiler de las viviendas */
+update DETALLE_ALQUILER
+    set
+        CANTMESDETALQ = 3
+    where
+        CODDETALQ;
+
+/* Listar registros de la tabla DETALLE_ALQUILER */
+select * from DETALLE_ALQUILER;
